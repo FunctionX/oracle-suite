@@ -5,6 +5,7 @@ WORKDIR /go/src/oracle-suite
 
 COPY . .
 
+RUN go env -w GO111MODULE=on && go env -w GOPROXY=https://goproxy.cn,direct
 RUN go mod tidy && go mod vendor
 
 ARG CGO_ENABLED=1

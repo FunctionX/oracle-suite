@@ -33,12 +33,14 @@ import (
 )
 
 const (
-	mainnetChainID = 1
-	kovanChainID   = 42
-	rinkebyChainID = 4
-	gorliChainID   = 5
-	ropstenChainID = 3
-	xdaiChainID    = 100
+	mainnetChainID            = 1
+	kovanChainID              = 42
+	rinkebyChainID            = 4
+	gorliChainID              = 5
+	ropstenChainID            = 3
+	xdaiChainID               = 100
+	fxcoreDevnetChainID       = 530
+	fxcoreTestnetChainChainID = 90001
 )
 
 // Addresses of multicall contracts. They're used to implement
@@ -46,12 +48,14 @@ const (
 //
 // https://github.com/makerdao/multicall
 var multiCallContracts = map[uint64]common.Address{
-	mainnetChainID: common.HexToAddress("0xeefba1e63905ef1d7acba5a8513c70307c1ce441"),
-	kovanChainID:   common.HexToAddress("0x2cc8688c5f75e365aaeeb4ea8d6a480405a48d2a"),
-	rinkebyChainID: common.HexToAddress("0x42ad527de7d4e9d9d011ac45b31d8551f8fe9821"),
-	gorliChainID:   common.HexToAddress("0x77dca2c955b15e9de4dbbcf1246b4b85b651e50e"),
-	ropstenChainID: common.HexToAddress("0x53c43764255c17bd724f74c4ef150724ac50a3ed"),
-	xdaiChainID:    common.HexToAddress("0xb5b692a88bdfc81ca69dcb1d924f59f0413a602a"),
+	fxcoreDevnetChainID:       common.HexToAddress("0xAD8Bd9B91943F56eA9a9185555D3f213919b0Ae2"),
+	fxcoreTestnetChainChainID: common.HexToAddress("0x3ED8dc12DeBC6333D38dC3c5c3c9796b84Db1Ad1"),
+	mainnetChainID:            common.HexToAddress("0xeefba1e63905ef1d7acba5a8513c70307c1ce441"),
+	kovanChainID:              common.HexToAddress("0x2cc8688c5f75e365aaeeb4ea8d6a480405a48d2a"),
+	rinkebyChainID:            common.HexToAddress("0x42ad527de7d4e9d9d011ac45b31d8551f8fe9821"),
+	gorliChainID:              common.HexToAddress("0x77dca2c955b15e9de4dbbcf1246b4b85b651e50e"),
+	ropstenChainID:            common.HexToAddress("0x53c43764255c17bd724f74c4ef150724ac50a3ed"),
+	xdaiChainID:               common.HexToAddress("0xb5b692a88bdfc81ca69dcb1d924f59f0413a602a"),
 }
 
 var ErrMulticallNotSupported = errors.New("multicall is not supported on current chain")
